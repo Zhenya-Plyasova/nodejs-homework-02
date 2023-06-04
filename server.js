@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const app = require('./app');
-const { DB_Host } = require('./config');
+const { DB_Host } = process.env;
 
 mongoose.connect(DB_Host)
   .then(() => {
