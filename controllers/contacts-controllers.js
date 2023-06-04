@@ -1,6 +1,8 @@
+const Contact = require("../models/contact");
+
 const Joi = require("joi");
 
-const contactsService = require("../models/contacts");
+// const contactsService = require("../models/contacts");
 
 const { HttpError } = require("../helpers");
 
@@ -19,7 +21,7 @@ const contactAddSchema = Joi.object({
 });
 
 const getAllContacts = async (req, res) => {
-    const result = await contactsService.listContacts();
+    const result = await Contact.find();
     res.json(result);
 };
 
