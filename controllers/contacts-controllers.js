@@ -19,15 +19,8 @@ const getContactById = async (req, res) => {
 };
 
 const postContact = async (req, res) => {
-
-    // const { error } = contactAddSchema.validate(req.body);
-    // if (error) {
-    //   throw HttpError(400, error.message);
-    // }
   const result = await Contact.create(req.body);
-  
   res.status(201).json(result);
-
 };
 
 const deleteContactById = async (req, res) => {
